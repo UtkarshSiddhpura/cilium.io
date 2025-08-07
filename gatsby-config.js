@@ -258,20 +258,6 @@ const plugins = [
   // `gatsby-plugin-offline`,
 ];
 
-if (process.env.CONTEXT === 'production') {
-  plugins.push({
-    resolve: `gatsby-plugin-algolia-search`,
-    options: {
-      appId: process.env.GATSBY_ALGOLIA_APP_ID,
-      apiKey: process.env.ALGOLIA_ADMIN_KEY,
-      indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-      enablePartialUpdates: true,
-      queries,
-      matchFields: ['title', 'excerpt'],
-      chunkSize: 10000, // default: 1000
-    },
-  });
-}
 
 module.exports = {
   trailingSlash: 'always',
